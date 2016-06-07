@@ -46,7 +46,18 @@ return array.join(" ")
 console.assert(capitalizeAll('every day is like sunday.') === 'Every Day Is Like Sunday.')
 
 // PART 3: write a function called properSentences(). It should take as input a string and capitalize the first letter of every sentence in that string. (For our purposes, all sentences will end with periods. Write one that works with ? and ! and receive a gratifying high five, right on the hand!)
-
+var properSentences=function(string){
+ var array=string.split(". ")
+ for (var i=0;i<array.length;i++){
+    var letters=array[i].split("")
+    letters[0]=letters[0].toUpperCase()
+    array[i]=letters.join("")
+ 	}
+    
+  return array.join(". ")  
+    
+    
+}
 var paragraph = 'it was a fine morning. the wine was good. light slanted in through the cafe window.'
 
 console.assert(properSentences(paragraph) === "It was a fine morning. The wine was good. Light slanted in through the cafe window.")
@@ -71,7 +82,12 @@ console.assert(iPutTheFunIn("reds") === "refunds")
 // PART 5: write a function called pipeline(). it should take three inputs: (1) a starting value, (2) a function, and (3) another function. it should use functions (2) and (3) on the starting value, one after the other, and return a new value that has been processed by both function (2) and function (3).
 
 // the following three tests all correspond to the pipeline() function.
+var pipeline=function(num,func1,func2){
 
+return func2(func1(num))
+
+
+}
 // test 1
 var paragraph = 'mom bring your crappy self in here. i want a dang sandwich.'
 
